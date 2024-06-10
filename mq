@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mq-akshay
+  labels:
+    app: mq
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mq
+  template:
+    metadata:
+      labels:
+        app: mq
+    spec:
+      containers:
+      - name: mqimage
+        image: akshayp1612/mq
+        ports:
+        - containerPort: 1414
